@@ -1,0 +1,72 @@
+1. Create a directory in your root/main directory
+	run this command on terminal : 
+	 -> aman@aman-linux:~$ mkdir /home/<USER_NAME>/<Folder_Name>/
+/*
+	example :
+	 -> aman@aman-linux:~$ mkdir /home/aman/HadoopWorkspace/	
+*/
+
+2. Go to specific directory:
+	aman@aman-linux:~$ cd ~/hadoop-3.3.6/etc/hadoop
+
+3. Then, open 'hdfs-site.xml' file
+	aman@aman-linux:~/hadoop-3.3.6/etc/hadoop$ ls
+	capacity-scheduler.xml            kms-log4j.properties
+	configuration.xsl                 kms-site.xml
+	container-executor.cfg            log4j.properties
+	core-site.xml                     mapred-env.cmd
+	hadoop-env.cmd                    mapred-env.sh
+	hadoop-env.sh                     mapred-queues.xml.template
+	hadoop-metrics2.properties        mapred-site.xml
+	hadoop-policy.xml                 shellprofile.d
+	hadoop-user-functions.sh.example  ssl-client.xml.example
+	hdfs-rbf-site.xml                 ssl-server.xml.example
+	hdfs-site.xml                     user_ec_policies.xml.template
+	httpfs-env.sh                     workers
+	httpfs-log4j.properties           yarn-env.cmd
+	httpfs-site.xml                   yarn-env.sh
+	kms-acls.xml                      yarnservice-log4j.properties
+	kms-env.sh                        yarn-site.xml
+
+4. Use this command to open it
+	aman@aman-linux:~/hadoop-3.3.6/etc/hadoop$ sudo namo hdfs-site.xml
+
+5. Now, copy paste this configuration in it
+	note :
+		see that you enter your username instead of <User_Name> and 
+			folder name instead of <Folder_Name>
+		
+	<configuration>
+		<property>
+		  <name>dfs.name.dir</name>
+		  <value>file:///home/<USER>/pseudo/dfs/name</value>
+		</property>
+		<property>
+		  <name>dfs.data.dir</name>
+		  <value>file:///home/<USER>/pseudo/dfs/data</value>
+		</property>
+		<property>
+			<name>dfs.replication</name>
+			<value>1</value>
+		</property>
+	</configuration>
+
+/*	
+
+	Example :
+	<configuration>
+		<property>
+		  <name>dfs.name.dir</name>
+		  <value>file:///home/aman/HadoopWorkspace/dfs/name</value>
+		</property>
+		<property>
+		  <name>dfs.data.dir</name>
+		  <value>file:///home/aman/HadoopWorkspace/dfs/data</value>
+		</property>
+		<property>
+		    <name>dfs.replication</name>
+		    <value>1</value>
+		</property>
+	</configuration>
+
+*/
