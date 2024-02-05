@@ -29,7 +29,7 @@
 	kms-env.sh                        yarn-site.xml
 
 4. Use this command to open it
-	aman@aman-linux:~/hadoop-3.3.6/etc/hadoop$ sudo namo hdfs-site.xml
+	aman@aman-linux:~/hadoop-3.3.6/etc/hadoop$ sudo nano hdfs-site.xml
 
 5. Now, copy paste this configuration in it
 	note :
